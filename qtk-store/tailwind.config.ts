@@ -1,10 +1,14 @@
 import type { Config } from 'tailwindcss'
+import flowbite from "flowbite/plugin";
+
+//npm install --save autoprefixer postcss tailwindcss flowbite flowbite-react
 
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    ".src/app/**/*.{ts,tsx}", "./node_modules/flowbite-react/lib/**/*.js"
   ],
   theme: {
     extend: {
@@ -13,8 +17,15 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'primary': '#009099',
+        'secondary': '#C95D3B',
+        'background-50': '#283342',
+        'background-100': '#1D242E',
+        'text': '#3E334E',
+      },
     },
   },
-  plugins: [],
+  plugins: [flowbite],
 }
 export default config
